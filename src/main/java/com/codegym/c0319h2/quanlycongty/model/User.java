@@ -22,21 +22,17 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column( unique = true)
-    @NotBlank
-    @Size(min = 4,max = 50)
+
     private String userName;
 
-    @Size(min = 6, max = 50)
     private String passWord;
 
-    @Column(unique = true)
-    @Email
+
     private String email;
     private String avatar;
     private LocalDate birthDate;
 
-    @Pattern(regexp = "/^[(][0-9]{2}[)][-][(][0][0-9]{9}[)]$/")
+
     private String phoneNumber;
     private String address;
     @ManyToMany(fetch = FetchType.LAZY)
@@ -45,9 +41,9 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
-    public User(@NotBlank @Size(min = 4, max = 50) String userName, @Size(min = 6, max = 50) String passWord, @Email String email) {
+    public User(String userName,String email, String passWord) {
         this.userName = userName;
-        this.passWord = passWord;
         this.email = email;
+        this.passWord = passWord;
     }
 }

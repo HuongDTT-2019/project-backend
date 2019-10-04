@@ -6,17 +6,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.Set;
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class CreateUserForm {
-    @Size(min = 4,max = 50)
+
     private String userName;
-    @Size(min = 4,max = 50)
     private String passWord;
-    @Email
     private String email;
-    private Set<String> role;
+    private Set<String> roles;
 }

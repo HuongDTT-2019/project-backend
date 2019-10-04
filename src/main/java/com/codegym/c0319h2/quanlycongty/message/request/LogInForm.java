@@ -11,10 +11,8 @@ import javax.validation.constraints.Size;
 @AllArgsConstructor
 @NoArgsConstructor
 public class LogInForm {
-    @NotBlank
-    @Size(min = 4,max = 50)
+
     private String userName;
-    @NotBlank
-    @Size(min = 6,max = 50)
+
     private String passWord;
 }
